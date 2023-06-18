@@ -2,7 +2,8 @@ import LoginPage from '../pageobjects/loginPage.js';
 
 describe ('Login Page elements and content', () => {
     beforeAll('open browser', () => {
-        browser.url('https://www.saucedemo.com/')
+        browser.setWindowSize(1209, 827);
+        browser.url('https://www.saucedemo.com/');
     });
 
     it('All elements should be displayed', async () => {
@@ -22,6 +23,12 @@ describe ('Login Page elements and content', () => {
         expect(PasswordPlaceholder).toEqual('Password');
         expect(buttonContent).toEqual('Login');
     });
+
+    it('Check if elements are functional', async () => {
+        await expect(LoginPage.inputUserName).toBeClickable();
+        await expect(LoginPage.inputUserName).toBeClickable();
+        await expect(LoginPage.loginButton).toBeClickable();
+    })
 });
 
 
