@@ -10,4 +10,10 @@
     await this.finishButton.click();
     await this.backHomeButton.click();
 };
+
+ beforeAll('open browser', () => {
+        browser.setWindowSize(1209, 827);
+        browser.url('https://www.saucedemo.com/');
+    });
 */
+

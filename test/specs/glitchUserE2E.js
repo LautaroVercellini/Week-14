@@ -1,14 +1,14 @@
 import LoginPage from '../pageobjects/loginPage.js';
 import MainPage from '../pageobjects/mainPage.js';
 
-describe ('Check elements and functionalities with "problem_user"', () => {
+describe ('Check elements and functionalities with "standard_user"', () => {
     beforeAll('open browser', () => {
         browser.setWindowSize(1209, 827);
         browser.url('https://www.saucedemo.com/');
     });
 
     it('Check elements displayed', async () => {
-        await LoginPage.logIn('problem_user', 'secret_sauce');
+        await LoginPage.logIn('performance_glitch_user', 'secret_sauce');
         await LoginPage.clickLoginButton();
 
         await expect (MainPage.appLogo).toBeDisplayed();

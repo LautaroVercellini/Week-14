@@ -1,8 +1,12 @@
-import LoginPage from "../pageobjects/loginPage";
+import LoginPage from "../pageobjects/loginPage.js";
 
 describe ('Check elements and functionalities with empty fields', () => {
+    beforeAll('open browser', () => {
+        browser.setWindowSize(1209, 827);
+        browser.url('https://www.saucedemo.com/');
+    });
+
     it('Check errors with empty username and password', async () => {
-        browser.open();
         await LoginPage.logIn('', '');
         await LoginPage.clickLoginButton();
 
@@ -22,11 +26,8 @@ describe ('Check elements and functionalities with empty fields', () => {
     it ("Check the text in toast", async () => {
         await expect(LoginPage.errorText).toHaveTextContaining('Epic sadface: Username is required');
     });
-});
 
-describe ('Check elements and functionalities with empty fields', () => {
     it('Check errors with empty password', async () => {
-        browser.open();
         await LoginPage.logIn('juancito', '');
         await LoginPage.clickLoginButton();
 
@@ -46,11 +47,8 @@ describe ('Check elements and functionalities with empty fields', () => {
     it ("Check the text in toast", async () => {
         await expect(LoginPage.errorText).toHaveTextContaining('Epic sadface: Password is required');
     });
-});
 
-describe ('Check elements and functionalities with empty fields', () => {
     it('Check errors with incorrect credentials', async () => {
-        browser.open();
         await LoginPage.logIn('juancito', 'juancito');
         await LoginPage.clickLoginButton();
 

@@ -79,4 +79,12 @@ describe ('Check elements and functionalities with "standard_user"', () => {
         await expect(MainPage.facebookIcon).toBeClickable();
         await expect (MainPage.linkedinIcon).toBeClickable();
     });
+
+    it('Logout Success', async () => {
+        await MainPage.menuIcon.click();
+        await MainPage.logoutButton.click();
+
+        const currentUrl = await browser.getUrl();
+        expect(currentUrl).toEqual('https://www.saucedemo.com/');
+    });
 });
