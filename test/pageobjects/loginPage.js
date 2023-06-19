@@ -19,6 +19,8 @@ class LoginPage {
     async clickLoginButton () {
         await this.loginButton.click();
     };
+
+    open() { return browser.url('http://www.saucedemo.com/') }
 };
 
 export default new LoginPage();

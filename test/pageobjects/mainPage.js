@@ -35,6 +35,15 @@ class MainPage {
     get facebookIcon() { return $('.social_facebook')};
     get linkedinIcon() { return $('.social_linkedin')};
 
+    async scrollUpToHeader() {
+        await browser.execute(() => {
+            const header = document.querySelector('.app_logo');
+            if(header) {
+                header.scrollIntoView();
+            };
+        });
+    };
+
     async scrollDownToFooter() {
         await browser.execute(() => {
             const footer = document.querySelector('.footer');
@@ -44,6 +53,7 @@ class MainPage {
         });
     }
     async logout () {
+        await this.menuIcon.click();
         await this.logoutButton.click();
     };
 };
