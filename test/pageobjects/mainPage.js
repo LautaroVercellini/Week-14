@@ -51,7 +51,8 @@ class MainPage {
                 footer.scrollIntoView();
             };
         });
-    }
+    };
+
     async logout () {
         await this.menuIcon.click();
         await this.logoutButton.click();
