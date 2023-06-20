@@ -1,6 +1,6 @@
 import LoginPage from '../pageobjects/loginPage.js';
 
-describe ('Check elements and functionalities with "locked_user_out"', () => {
+describe ('Check elements and functionalities with blocked user', () => {
     beforeAll('open browser', () => {
         browser.setWindowSize(1209, 827);
         browser.url('https://www.saucedemo.com/');

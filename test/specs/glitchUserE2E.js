@@ -6,7 +6,7 @@ import CheckoutStepOne from '../pageobjects/checkoutStepOne.js';
 import CheckoutStepTwo from '../pageobjects/checkoutStepTwo.js';
 import CheckoutComplete from '../pageobjects/checkoutComplete.js';
 
-describe ('Check elements and functionalities with standard user', () => {
+describe ('Check elements and functionalities with glitch user', () => {
     beforeAll('open browser', async () => {
         browser.setWindowSize(1209, 827);
         browser.url('https://www.saucedemo.com/');

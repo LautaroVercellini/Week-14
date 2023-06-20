@@ -23,13 +23,15 @@ run **npm install --save-dev wdio<br>**
 :black_medium_small_square:select 'Alurre' for the report <br>
 :black_medium_small_square:Select 'Wait-for' for the question of add pluggin to the setup <br>
 :black_medium_small_square:Select 'ChromeDriver' for service question <br>
-1:black_medium_small_square:Press enter for the using of 'Localhost' as url <br>
-1:black_medium_small_square:Select 'Y' for the run of npm install <br>
+:black_medium_small_square:Press enter for the using of 'Localhost' as url <br>
+:black_medium_small_square:Select 'Y' for the run of npm install <br>
 
 
 ### **Running Tests**<br>
 To run the tests, execute the following command: <br>
 **npm run wdio**
+
+<h3>Wdio Documentation<a href=https://webdriver.io/> Click here</a></h3>
 
 ### **Author**
 ### *Lautaro Vercellini*

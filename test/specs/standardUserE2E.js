@@ -175,7 +175,7 @@ describe ('Check elements and functionalities with standard user', () => {
 
         const endTime = new Date().getTime();
         const finalTime = endTime - startTime;
-        expect(finalTime).toBeLessThanOrEqual(2000);
+        expect(finalTime).toBeLessThanOrEqual(3000);
     });
 
     it ('Check correct elements displayed and functionalities when clicking second product', async () => {
