@@ -65,6 +65,43 @@ class MainPage {
         });
     };
 
+    async waitForElementsToBeDisplayed() {
+        await Promise.all([
+            this.appLogo.waitForDisplayed(),
+            this.cartIcon.waitForDisplayed(),
+            this.menuIcon.waitForDisplayed(),
+            this.productsIcon.waitForDisplayed(),
+            this.firstImage.waitForDisplayed(),
+            this.firstProductTitle.waitForDisplayed(),
+            this.firstPrice.waitForDisplayed(),
+            this.firstAddCartButton.waitForDisplayed(),
+            this.secondImage.waitForDisplayed(),
+            this.secondProductTitle.waitForDisplayed(),
+            this.secondPrice.waitForDisplayed(),
+            this.secondAddCartButton.waitForDisplayed(),
+            this.thirdImage.waitForDisplayed(),
+            this.thirdProductTitle.waitForDisplayed(),
+            this.thirdPrice.waitForDisplayed(),
+            this.thirdAddCartButton.waitForDisplayed(),
+            this.fourthImage.waitForDisplayed(),
+            this.fourthProductTitle.waitForDisplayed(),
+            this.fourthPrice.waitForDisplayed(),
+            this.fourthAddCartButton.waitForDisplayed(),
+            this.fifthImage.waitForDisplayed(),
+            this.fifthProductTitle.waitForDisplayed(),
+            this.fifthPrice.waitForDisplayed(),
+            this.fifthAddCartButton.waitForDisplayed(),
+            this.sixthImage.waitForDisplayed(),
+            this.sixthProductTitle.waitForDisplayed(),
+            this.sixthPrice.waitForDisplayed(),
+            this.sixthAddCartButton.waitForDisplayed(),
+            this.footer.waitForDisplayed(),
+            this.twitterIcon.waitForDisplayed(),
+            this.facebookIcon.waitForDisplayed(),
+            this.linkedinIcon.waitForDisplayed(),
+        ]);
+    };
+
     async logout () {
         await this.menuIcon.click();
         await this.logoutButton.click();

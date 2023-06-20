@@ -5,7 +5,6 @@ import CartPage from '../pageobjects/cartPage.js';
 import CheckoutStepOne from '../pageobjects/checkoutStepOne.js';
 import CheckoutStepTwo from '../pageobjects/checkoutStepTwo.js';
 import CheckoutComplete from '../pageobjects/checkoutComplete.js';
-import { performancetotal } from "wdio-performancetotal-service";
 
 describe ('Check elements and functionalities with standard user', () => {
     beforeAll('open browser', async () => {
@@ -13,10 +12,20 @@ describe ('Check elements and functionalities with standard user', () => {
         browser.url('https://www.saucedemo.com/');
     });
 
-    it('Check elements displayed in header', async () => {
+    it('Check Time Navigation from Login to Main Page', async () => {
         await LoginPage.logIn('performance_glitch_user', 'secret_sauce');
         await LoginPage.clickLoginButton();
+        const startTime = new Date().getTime();
 
+        await MainPage.waitForElementsToBeDisplayed();
+
+        const endTime = new Date().getTime();
+        const finalTime = endTime - startTime;
+        expect(finalTime).toBeLessThanOrEqual(3000);
+    });
+
+
+    it('Check elements displayed in header', async () => {
         await expect (MainPage.appLogo).toBeDisplayed();
         await expect (MainPage.cartIcon).toBeDisplayed();
         await expect (MainPage.menuIcon).toBeDisplayed();
@@ -33,7 +42,6 @@ describe ('Check elements and functionalities with standard user', () => {
         await expect(MainPage.firstProductTitle).toBeDisplayed();
         await expect (MainPage.firstAddCartButton).toBeDisplayed();
         await expect(MainPage.firstImage).toHaveAttribute('src', '/static/media/sauce-backpack-1200x1500.0a0b85a3.jpg');
-
 
         await expect(MainPage.secondImage).toBeDisplayed();
         await expect(MainPage.secondProductTitle).toBeDisplayed();
@@ -161,6 +169,16 @@ describe ('Check elements and functionalities with standard user', () => {
         await InventoryDetailsPage.iconBackProducts.click();
     });
 
+    it('Check Navigation Time from inventory Page to Home Page', async () => {
+        const startTime = new Date().getTime();
+
+        await MainPage.waitForElementsToBeDisplayed();
+
+        const endTime = new Date().getTime();
+        const finalTime = endTime - startTime;
+        expect(finalTime).toBeLessThanOrEqual(3000);
+    });
+
     it ('Check correct elements displayed and functionalities when clicking second product', async () => {
         await MainPage.secondImage.click();
 
@@ -175,6 +193,16 @@ describe ('Check elements and functionalities with standard user', () => {
         await MainPage.removeSecondProduct.click();
 
         await InventoryDetailsPage.iconBackProducts.click();
+    });
+
+    it('Check Navigation Time from inventory Page to Home Page', async () => {
+        const startTime = new Date().getTime();
+
+        await MainPage.waitForElementsToBeDisplayed();
+
+        const endTime = new Date().getTime();
+        const finalTime = endTime - startTime;
+        expect(finalTime).toBeLessThanOrEqual(3000);
     });
 
     it ('Check correct elements displayed and functionalities when clicking third product', async () => {
@@ -193,6 +221,16 @@ describe ('Check elements and functionalities with standard user', () => {
         await InventoryDetailsPage.iconBackProducts.click();
     });
 
+    it('Check Navigation Time from inventory Page to Home Page', async () => {
+        const startTime = new Date().getTime();
+
+        await MainPage.waitForElementsToBeDisplayed();
+
+        const endTime = new Date().getTime();
+        const finalTime = endTime - startTime;
+        expect(finalTime).toBeLessThanOrEqual(3000);
+    });
+
     it ('Check correct elements displayed and functionalities when clicking fourth product', async () => {
         await MainPage.fourthImage.click();
 
@@ -207,6 +245,16 @@ describe ('Check elements and functionalities with standard user', () => {
         await MainPage.removeFourthProduct.click();
 
         await InventoryDetailsPage.iconBackProducts.click();
+    });
+
+    it('Check Navigation Time from inventory Page to Home Page', async () => {
+        const startTime = new Date().getTime();
+
+        await MainPage.waitForElementsToBeDisplayed();
+
+        const endTime = new Date().getTime();
+        const finalTime = endTime - startTime;
+        expect(finalTime).toBeLessThanOrEqual(3000);
     });
 
     it ('Check correct elements displayed and functionalities when clicking fifth product', async () => {
@@ -225,6 +273,16 @@ describe ('Check elements and functionalities with standard user', () => {
         await InventoryDetailsPage.iconBackProducts.click();
     });
 
+    it('Check Navigation Time from inventory Page to Home Page', async () => {
+        const startTime = new Date().getTime();
+
+        await MainPage.waitForElementsToBeDisplayed();
+
+        const endTime = new Date().getTime();
+        const finalTime = endTime - startTime;
+        expect(finalTime).toBeLessThanOrEqual(3000);
+    });
+
     it ('Check correct elements displayed and functionalities when clicking sixth product', async () => {
         await MainPage.sixthImage.click();
 
@@ -239,6 +297,16 @@ describe ('Check elements and functionalities with standard user', () => {
         await MainPage.removeSixthProduct.click();
 
         await InventoryDetailsPage.iconBackProducts.click();
+    });
+
+    it('Check Navigation Time from inventory Page to Home Page', async () => {
+        const startTime = new Date().getTime();
+
+        await MainPage.waitForElementsToBeDisplayed();
+
+        const endTime = new Date().getTime();
+        const finalTime = endTime - startTime;
+        expect(finalTime).toBeLessThanOrEqual(3000);
     });
 
     it('Check elements and functionalities in CartPage', async () => {
@@ -320,9 +388,18 @@ describe ('Check elements and functionalities with standard user', () => {
         await expect(CheckoutComplete.backHomeButton).toBeClickable();
     });
 
-    it('Back to main Page', async () => {
+    it('Check Navigation Time from finish purchase to Home Page', async () => {
         await CheckoutComplete.backHomeButton.click();
+        const startTime = new Date().getTime();
 
+        await MainPage.waitForElementsToBeDisplayed();
+
+        const endTime = new Date().getTime();
+        const finalTime = endTime - startTime;
+        expect(finalTime).toBeLessThanOrEqual(3000);
+    });
+
+    it('Logout', async () => {
         await MainPage.menuIcon.click();
         await MainPage.logoutButton.click();
 
