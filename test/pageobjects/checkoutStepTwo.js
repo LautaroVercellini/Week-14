@@ -1,4 +1,4 @@
-class checkoutStepTwo {
+class CheckoutStepTwo {
     get titleSection() { return $('#header_container > div.header_secondary_container > span')};
     get divProduct() { return $('#checkout_summary_container > div > div.cart_list > div.cart_item')};
     get payment() { return $('#checkout_summary_container > div > div.summary_info > div:nth-child(1)')};
@@ -8,3 +8,5 @@ class checkoutStepTwo {
     get cancelButton() { return $('#cancel')};
     get finishButton() { return $('#finish')};
 }
+
+export default new CheckoutStepTwo();

@@ -1,5 +1,4 @@
 import LoginPage from '../pageobjects/loginPage.js';
-import MainPage from '../pageobjects/mainPage.js';
 
 describe ('Check elements and functionalities with "locked_user_out"', () => {
     beforeAll('open browser', () => {
