@@ -25,7 +25,6 @@ export const config = {
     specs: [
         './test/specs/loginLayoutE2E.js', './test/specs/loginWrongCredentialsE2E.js', './test/specs/blockedUserE2E.js',
         './test/specs/problemUserE2E.js', './test/specs/glitchUserE2E.js', './test/specs/standardUserE2E.js',
-        './test/specs/flowBuyE2E.js'
     ],
     // Patterns to exclude.
     exclude: [

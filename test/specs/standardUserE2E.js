@@ -31,10 +31,12 @@ describe ('Check elements and functionalities with standard user', () => {
         await expect(MainPage.firstImage).toBeDisplayed();
         await expect(MainPage.firstProductTitle).toBeDisplayed();
         await expect (MainPage.firstAddCartButton).toBeDisplayed();
+        await expect(MainPage.firstImage).toHaveAttribute('src', '/static/media/sauce-backpack-1200x1500.0a0b85a3.jpg');
 
         await expect(MainPage.secondImage).toBeDisplayed();
         await expect(MainPage.secondProductTitle).toBeDisplayed();
         await expect (MainPage.secondAddCartButton).toBeDisplayed();
+        await expect(MainPage.secondImage).toHaveAttribute('src', '/static/media/bike-light-1200x1500.37c843b0.jpg');
     });
 
     it('Check functional elements in first and second products', async () => {
@@ -51,10 +53,12 @@ describe ('Check elements and functionalities with standard user', () => {
         await expect(MainPage.thirdImage).toBeDisplayed();
         await expect(MainPage.thirdProductTitle).toBeDisplayed();
         await expect (MainPage.thirdAddCartButton).toBeDisplayed();
+        await expect(MainPage.thirdImage).toHaveAttribute('src', '/static/media/bolt-shirt-1200x1500.c2599ac5.jpg');
 
         await expect(MainPage.fourthImage).toBeDisplayed();
         await expect(MainPage.fourthProductTitle).toBeDisplayed();
         await expect (MainPage.fourthAddCartButton).toBeDisplayed();
+        await expect(MainPage.fourthImage).toHaveAttribute('src', '/static/media/sauce-pullover-1200x1500.51d7ffaf.jpg');
     });
 
     it('Check functional elements in third and fourth products', async () => {
@@ -73,10 +77,12 @@ describe ('Check elements and functionalities with standard user', () => {
         await expect(MainPage.fifthImage).toBeDisplayed();
         await expect(MainPage.fifthProductTitle).toBeDisplayed();
         await expect (MainPage.fifthAddCartButton).toBeDisplayed();
+        await expect(MainPage.fifthImage).toHaveAttribute('src', '/static/media/red-onesie-1200x1500.2ec615b2.jpg');
 
         await expect(MainPage.sixthImage).toBeDisplayed();
         await expect(MainPage.sixthProductTitle).toBeDisplayed();
         await expect (MainPage.sixthAddCartButton).toBeDisplayed();
+        await expect(MainPage.sixthImage).toHaveAttribute('src', '/static/media/red-tatt-1200x1500.30dadef4.jpg');
     });
 
     it('Check funtional elements in fifth and sixth products', async () => {
@@ -322,65 +328,3 @@ describe ('Check elements and functionalities with standard user', () => {
         expect(currentUrl).toEqual('https://www.saucedemo.com/');
     });
 });
-
-
-/*
-
-    it('Check Elements Displayed on Checkout Step One', async () => {
-        await CartPage.checkoutButton.click();
-
-        await CheckoutPage.titleSection.toBeDisplayed();
-        await CheckoutPage.firstNameInput.toBeDisplayed();
-        await CheckoutPage.lastNameInput.toBeDisplayed();
-        await CheckoutPage.postalCodeInput.toBeDisplayed();
-        await CheckoutPage.cancelButton.toBeDisplayed();
-        await CheckoutPage.continueButton.toBeDisplayed();
-    });
-
-    it('Check Elements funtionals on Checkout Step One', async () => {
-        await CheckoutPage.firstNameInput.toBeClickable();
-        await CheckoutPage.lastNameInput.toBeClickable();
-        await CheckoutPage.postalCodeInput.toBeClickable();
-        await CheckoutPage.continueButton.toBeClickable();
-    });
-
-    it('Check Elements Displayed in Checkout Step Two', async () => {
-        await CheckoutPage.completeForm('Juancito', 'Juarez', '1500');
-
-        await CheckoutStepTwo.titleSection.toBeDisplayed();
-        await CheckoutStepTwo.divProduc.toBeDisplayed();
-        await CheckoutStepTwo.payment.toBeDisplayed();
-        await CheckoutStepTwo.shipping.toBeDisplayed();
-        await CheckoutStepTwo.price.toBeDisplayed();
-        await CheckoutStepTwo.total.toBeDisplayed()
-        await CheckoutStepTwo.cancelButton.toBeDisplayed();
-        await CheckoutStepTwo.finishButton.toBeDisplayed()
-    });
-
-    it('Check Elements Functionals in Checkout Step Two', async () => {
-        await CheckoutStepTwo.cancelButton.toBeDisplayed();
-        await CheckoutStepTwo.finishButton.toBeDisplayed();
-    });
-
-    it ('Check Elements Displayed in Checkout Complete', async () => {
-        await CheckoutStepTwo.finishButton.click();
-
-        await CheckoutComplete.titleSection.toBeDisplayed();
-        await CheckoutComplete.successIcon.toBeDisplayed();
-        await CheckoutComplete.successMsg.toBeDisplayed();
-        await CheckoutComplete.successText.toBeDisplayed();
-        await CheckoutComplete.backHomeButton.toBeDisplayed()
-    });
-
-    it ('Check Elements Functionals in Checkout complete', async () => {
-        await CheckoutComplete.backHomeButton.toBeClickable();
-    });
-
-    it('Finish buy', async () => {
-        await CheckoutComplete.backHomeButton.click();
-    });
-
-    it('Logout Succes', async () => {
-        await MainPage.logout();
-    });
-    */
