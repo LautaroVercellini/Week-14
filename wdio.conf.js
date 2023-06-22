@@ -24,7 +24,7 @@ export const config = {
     //
     specs: [
         './test/specs/loginLayoutE2E.js', './test/specs/loginWrongCredentialsE2E.js', './test/specs/blockedUserE2E.js',
-        './test/specs/problemUserE2E.js', './test/specs/glitchUserE2E.js', './test/specs/standardUserE2E.js',
+        './test/specs/problemUserE2E.js', './test/specs/glitchUserE2E.js', './test/specs/standardUserE2E.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -125,7 +125,8 @@ export const config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: [['allure', {outputDir: 'allure-results'}]],
+    reporters: ["spec"],
+    //'allure', {outputDir: 'allure-results'},
 
 
     //
