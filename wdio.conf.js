@@ -1,3 +1,4 @@
+const allure = require('allure-commandline');
 export const config = {
     //
     // ====================
@@ -54,7 +55,8 @@ export const config = {
     //
     capabilities: [{
         // capabilities for local browser web tests
-        browserName: 'chrome' // or "firefox", "microsoftedge", "safari"
+        browserName: 'chrome', // or "firefox", "microsoftedge", "safari"
+        'goog:chromeOptions': { args: ['headless', 'disable-gpu'],  }
     }],
     //
     // ===================
@@ -125,8 +127,7 @@ export const config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ["spec"],
-    //'allure', {outputDir: 'allure-results'},
+    reporters: ["spec", ['allure', {outputDir: 'allure-results', disableWebdriverScreenshotsReporting: true},]],
 
 
     //
@@ -237,8 +238,28 @@ export const config = {
      * @param {boolean} result.passed    true if test has passed, otherwise false
      * @param {object}  result.retries   informations to spec related retries, e.g. `{ attempts: 0, limit: 0 }`
      */
+    onComplete: function() {
+        const reportError = new Error('Could not generate Allure report')
+        const generation = allure(['generate', 'allure-results', '--clean'])
+        return new Promise((resolve, reject) => {
+            const generationTimeout = setTimeout(
+                () => reject(reportError),
+                5000)
+
+            generation.on('exit', function(exitCode) {
+                clearTimeout(generationTimeout)
+
+                if (exitCode !== 0) {
+                    return reject(reportError)
+                }
+
+                console.log('Allure report successfully generated')
+                resolve()
+            })
+        })
+    },
     afterTest: async function(test, context, { error, result, duration, passed, retries }) {
-        if (!passed) {
+        if (!error) {
             await browser.takeScreenshot();
         }
     },
